@@ -1,0 +1,30 @@
+name: 'gitea-release-manger'
+description: 'gitea-release-manger'
+inputs:
+  url:
+    description: 'Git url'
+    required: true
+  token:
+    description: 'Token fot gitea'
+    required: true
+  repository:
+    description: 'Repository name'
+    required: true
+  command:
+    description: 'Command'
+    required: true
+  tag:
+    description: 'Tag'
+    default: ""
+  path:
+    description: 'Path to attachment'
+    required: true
+  attachmentName:
+    description: 'Attachment name'
+    required: true
+outputs:
+  release:
+    description: 'Id of release'
+runs:
+  using: 'node20'
+  main: 'loader.js'
