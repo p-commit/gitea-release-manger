@@ -53,6 +53,8 @@ const fullCreate = async () => {
       tag = parsePullRequestString(info);
 
       console.log(`Тег на основе комита: ${tag}`);
+    } else {
+      tag = tag + format(new Date(), 'yyyyMMddHHmm');
     }
 
     const tagData = await createTag(token, giteaURL, repository, tag, tag);
